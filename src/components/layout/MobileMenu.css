@@ -12,9 +12,11 @@
   position: relative;
   display: flex;
   width: min(100%, 29rem);
+  height: 100vh;
   height: 100dvh;
   flex-direction: column;
-  padding: 1.25rem clamp(1.3rem, 5vw, 2rem) max(1.5rem, env(safe-area-inset-bottom));
+  padding: max(1.25rem, env(safe-area-inset-top)) max(1.3rem, 5vw, env(safe-area-inset-right)) max(1.5rem, env(safe-area-inset-bottom)) max(1.3rem, 5vw, env(safe-area-inset-left));
+  overscroll-behavior-y: contain;
   overflow-y: auto;
   background:
     radial-gradient(circle at 105% 75%, rgba(234, 228, 242, 0.8), transparent 38%),
@@ -185,7 +187,8 @@
 @media (max-width: 480px) {
   .mobile-menu__panel {
     width: 100%;
-    padding-inline: 1.4rem;
+    padding-left: max(1.4rem, env(safe-area-inset-left));
+    padding-right: max(1.4rem, env(safe-area-inset-right));
   }
 
   .mobile-menu__nav-link {
@@ -207,4 +210,9 @@
   .mobile-menu__actions {
     padding-top: 1.5rem;
   }
+}
+
+/* Keep every menu item reachable when the viewport is short. */
+.mobile-menu__panel > * {
+  flex-shrink: 0;
 }

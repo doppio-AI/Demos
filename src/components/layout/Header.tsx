@@ -18,6 +18,15 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1050px)')
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMenuOpen(false)
+    }
+    desktop.addEventListener('change', closeOnDesktop)
+    return () => desktop.removeEventListener('change', closeOnDesktop)
+  }, [])
+
   return (
     <>
       <div className="topbar">

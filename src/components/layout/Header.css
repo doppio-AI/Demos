@@ -131,6 +131,7 @@
 }
 
 .site-header__actions {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -216,8 +217,8 @@
   }
 
   .menu-toggle {
-    width: 2.65rem;
-    height: 2.65rem;
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   .topbar {

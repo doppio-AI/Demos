@@ -742,3 +742,13 @@
     justify-content: center;
   }
 }
+
+/* User-entered names and email addresses must reflow inside the review. */
+.appointment-review__group {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.appointment-form__contact-fallback {
+  flex-wrap: wrap;
+}

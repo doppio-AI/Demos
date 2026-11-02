@@ -135,6 +135,14 @@ node scripts/functional-check.mjs
 node scripts/all-width-check.mjs
 ```
 
+Comprobación responsive automatizada (63 combinaciones de ruta y viewport, de 320 a 2560 px, orientación horizontal, menú en pantallas bajas y cambio a escritorio):
+
+```bash
+# Con Chromium instalado en el entorno en la nube:
+BROWSER_PATH=/usr/bin/chromium node scripts/responsive-check.mjs
+# Sin BROWSER_PATH se utiliza el Chromium de Playwright previamente instalado.
+```
+
 Se puede probar contra el build de producción con `BASE_URL=http://127.0.0.1:4173` después de ejecutar `npm run preview`.
 
 ## Notas técnicas

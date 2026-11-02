@@ -181,7 +181,8 @@ fieldset {
 .container {
   width: min(100%, calc(var(--container) + var(--gutter) * 2));
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-left: max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
 }
 
 .container--narrow {
@@ -570,6 +571,7 @@ fieldset {
 
 /* Form primitives */
 .field {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -598,7 +600,7 @@ fieldset {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
-  font-size: 0.96rem;
+  font-size: 1rem;
   line-height: 1.5;
   transition:
     border-color 0.2s ease,

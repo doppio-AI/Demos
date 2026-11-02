@@ -14,7 +14,7 @@
     left: 0;
     z-index: 90;
     display: block;
-    padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+    padding: 0.55rem max(0.75rem, env(safe-area-inset-right)) calc(0.55rem + env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
     background: rgba(255, 249, 248, 0.94);
     border-top: 1px solid var(--line);
     box-shadow: 0 -10px 35px rgba(41, 40, 79, 0.08);
