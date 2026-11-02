@@ -1,0 +1,606 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(2.6rem, 5vw, 4.8rem) clamp(2.8rem, 5vw, 4.5rem);
+  background:
+    linear-gradient(180deg, rgba(255, 249, 248, 0.4), rgba(255, 249, 248, 0.9)),
+    radial-gradient(circle at 70% 18%, rgba(247, 221, 228, 0.62), transparent 31%);
+}
+
+.hero::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+  background: var(--line);
+}
+
+.hero__backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__orb {
+  position: absolute;
+  display: block;
+  border-radius: 44% 56% 63% 37% / 47% 42% 58% 53%;
+}
+
+.hero__orb--one {
+  top: 8%;
+  right: -8rem;
+  width: 27rem;
+  height: 30rem;
+  background: var(--rose-pastel);
+  opacity: 0.48;
+  transform: rotate(14deg);
+}
+
+.hero__orb--two {
+  right: 34%;
+  bottom: -8rem;
+  width: 20rem;
+  height: 18rem;
+  background: var(--lavender);
+  opacity: 0.44;
+  transform: rotate(-12deg);
+}
+
+.hero__arc {
+  position: absolute;
+  top: 6%;
+  right: -18rem;
+  width: 46rem;
+  color: var(--rose-deep);
+  opacity: 0.13;
+}
+
+.hero__side-note {
+  position: absolute;
+  bottom: 7rem;
+  left: 1.25rem;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  grid-template-areas:
+    'copy visual'
+    'details visual';
+  grid-template-rows: auto auto;
+  column-gap: clamp(2rem, 5vw, 5.5rem);
+  row-gap: clamp(1.5rem, 2.6vw, 2.4rem);
+  align-items: start;
+}
+
+.hero__copy {
+  grid-area: copy;
+  max-width: 43rem;
+}
+
+.hero__eyebrow {
+  margin-bottom: clamp(1.15rem, 2vw, 1.7rem);
+}
+
+.hero__title {
+  display: flex;
+  max-width: 8.6ch;
+  flex-direction: column;
+  font-size: clamp(3.45rem, 6.9vw, 6.6rem);
+  font-weight: 300;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.hero__title > span {
+  display: block;
+}
+
+.hero__title-emphasis {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  color: var(--rose-deep);
+  font-weight: 500;
+}
+
+.hero__title-emphasis svg {
+  position: absolute;
+  right: 0.03em;
+  bottom: -0.02em;
+  left: 0.03em;
+  z-index: -1;
+  width: calc(100% - 0.06em);
+  color: var(--rose-powder);
+  opacity: 0.75;
+}
+
+.hero__lede {
+  max-width: 48ch;
+  margin-top: clamp(1.2rem, 2.4vw, 1.8rem);
+  color: var(--muted);
+  font-size: clamp(0.99rem, 1.25vw, 1.1rem);
+  line-height: 1.82;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.35rem;
+  align-items: center;
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.hero__actions .btn {
+  min-width: 11.5rem;
+}
+
+.hero__note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.hero__note-dot {
+  width: 4px;
+  height: 4px;
+  flex: 0 0 auto;
+  background: var(--rose);
+  border-radius: 50%;
+}
+
+.hero__details {
+  grid-area: details;
+  align-self: end;
+}
+
+.hero__areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0;
+  margin-bottom: 1.4rem;
+}
+
+.hero__areas li {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.hero__areas li::after {
+  width: 3px;
+  height: 3px;
+  margin-inline: 0.85rem;
+  content: '';
+  background: var(--rose);
+  border-radius: 50%;
+  opacity: 0.75;
+}
+
+.hero__areas li:last-child::after {
+  display: none;
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.3rem;
+  align-items: flex-start;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--line);
+}
+
+.hero__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hero__fact span {
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.hero__fact small {
+  color: var(--muted);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+.hero__fact--hospital span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.hero__fact-divider {
+  width: 1px;
+  height: 2rem;
+  margin-top: 0.1rem;
+  background: var(--line);
+}
+
+.hero__visual {
+  position: relative;
+  grid-area: visual;
+  align-self: center;
+  width: 100%;
+  max-width: 29rem;
+  margin-left: auto;
+  padding: 1.2rem 0 1.4rem 1.2rem;
+}
+
+.hero__art {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__badge {
+  position: absolute;
+  top: 13%;
+  left: -1.2rem;
+  z-index: 3;
+  display: flex;
+  max-width: 15rem;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.62rem 1rem 0.62rem 0.62rem;
+  background: rgba(255, 253, 252, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  box-shadow: 0 15px 38px rgba(60, 38, 51, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+.hero__badge-icon {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--rose-deep);
+  background: var(--rose-pastel);
+  border-radius: 50%;
+}
+
+.hero__badge strong,
+.hero__badge small {
+  display: block;
+  line-height: 1.35;
+}
+
+.hero__badge strong {
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.hero__badge small {
+  margin-top: 0.12rem;
+  color: var(--muted);
+  font-size: 0.6rem;
+}
+
+.hero__scroll-hint {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero__scroll-hint svg {
+  animation: hint-bob 2.6s ease-in-out infinite;
+}
+
+@keyframes hint-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 1199px) {
+  .hero__visual {
+    max-width: 26rem;
+    padding-left: 0;
+  }
+
+  .hero__badge {
+    left: -0.7rem;
+  }
+
+  .hero__facts {
+    max-width: 34rem;
+  }
+
+  .hero__fact--hospital {
+    flex-basis: 100%;
+    padding-top: 0.25rem;
+  }
+
+  .hero__fact--hospital + .hero__fact-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 979px) {
+  .hero {
+    padding-top: 2.4rem;
+  }
+
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero__copy {
+    display: contents;
+  }
+
+  .hero__eyebrow {
+    order: 1;
+  }
+
+  .hero__title {
+    order: 2;
+    max-width: 9ch;
+    font-size: clamp(3.5rem, 10vw, 5.7rem);
+  }
+
+  .hero__visual {
+    order: 3;
+    width: min(100%, 27rem);
+    margin: 1.8rem auto 1.7rem;
+    padding: 0;
+  }
+
+  .hero__badge {
+    top: 12%;
+    left: -1.2rem;
+  }
+
+  .hero__lede {
+    order: 4;
+    max-width: 52ch;
+    margin-top: 0;
+  }
+
+  .hero__actions {
+    order: 5;
+  }
+
+  .hero__note {
+    order: 6;
+  }
+
+  .hero__details {
+    order: 7;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.2rem 2rem;
+    align-items: start;
+    margin-top: 1.8rem;
+  }
+
+  .hero__areas {
+    flex-direction: column;
+    margin-bottom: 0;
+    gap: 0.5rem;
+  }
+
+  .hero__areas li::after {
+    display: none;
+  }
+
+  .hero__facts {
+    padding-top: 0;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+    padding-left: 1.5rem;
+  }
+
+  .hero__fact--hospital {
+    flex-basis: auto;
+    padding-top: 0;
+  }
+
+  .hero__scroll-hint {
+    display: none;
+  }
+
+  .hero__side-note {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 2.2rem;
+    padding-bottom: 2.8rem;
+  }
+
+  .hero__title {
+    max-width: 100%;
+    font-size: clamp(3.35rem, 15.5vw, 4.9rem);
+    line-height: 0.93;
+  }
+
+  .hero__visual {
+    width: min(86%, 22rem);
+    margin: 1.5rem auto 1.45rem;
+  }
+
+  .hero__lede {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .hero__actions .text-link {
+    align-self: center;
+    font-size: 0.8rem;
+  }
+
+  .hero__note {
+    align-items: flex-start;
+    max-width: 29ch;
+    margin-top: 0.9rem;
+    font-size: 0.67rem;
+  }
+
+  .hero__note-dot {
+    margin-top: 0.42rem;
+  }
+
+  .hero__badge {
+    top: 8%;
+    left: -1.4rem;
+    max-width: 13.5rem;
+    padding: 0.5rem 0.85rem 0.5rem 0.5rem;
+  }
+
+  .hero__badge-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .hero__badge strong {
+    font-size: 0.62rem;
+  }
+
+  .hero__badge small {
+    font-size: 0.56rem;
+  }
+
+  .hero__details {
+    display: block;
+    margin-top: 1.5rem;
+  }
+
+  .hero__areas {
+    flex-direction: row;
+    gap: 0.35rem 0;
+    margin-bottom: 1.3rem;
+  }
+
+  .hero__areas li {
+    font-size: 0.59rem;
+  }
+
+  .hero__areas li::after {
+    display: block;
+    margin-inline: 0.55rem;
+  }
+
+  .hero__facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-top: 1.2rem;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .hero__fact span {
+    font-size: 0.78rem;
+  }
+
+  .hero__fact small {
+    font-size: 0.57rem;
+  }
+
+  .hero__fact--hospital {
+    grid-column: 1 / -1;
+    padding-top: 0.2rem;
+  }
+
+  .hero__fact-divider {
+    display: none;
+  }
+
+  .hero__orb--one {
+    right: -12rem;
+  }
+
+  .hero__orb--two {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__visual {
+    width: 88%;
+  }
+}
+
+@media (max-width: 370px) {
+  .hero__title {
+    font-size: 3.2rem;
+  }
+
+  .hero__areas li {
+    font-size: 0.54rem;
+  }
+
+  .hero__areas li::after {
+    margin-inline: 0.38rem;
+  }
+
+  .hero__badge {
+    left: -0.85rem;
+  }
+}

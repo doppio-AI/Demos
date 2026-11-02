@@ -1,0 +1,249 @@
+.appointment-page {
+  position: relative;
+  padding-block: clamp(2.8rem, 5.5vw, 5rem) clamp(4rem, 7vw, 6rem);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(234, 228, 242, 0.68), transparent 27%),
+    radial-gradient(circle at 5% 70%, rgba(247, 221, 228, 0.52), transparent 26%),
+    var(--paper);
+}
+
+.appointment-page__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.45fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.appointment-page__head h1 {
+  max-width: 10ch;
+  font-size: clamp(3.1rem, 6.5vw, 5.7rem);
+  font-weight: 300;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+
+.appointment-page__head > div:first-child p:last-child {
+  max-width: 50ch;
+  margin-top: 1.3rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.82;
+}
+
+.appointment-page__head-aside {
+  padding-bottom: 0.2rem;
+}
+
+.appointment-page__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.8rem;
+  color: var(--rose-ink);
+  background: var(--rose-pastel);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.appointment-page__head-aside p {
+  max-width: 31ch;
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.appointment-page__layout {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.6fr) minmax(0, 1.45fr);
+  gap: clamp(1.1rem, 2.5vw, 2rem);
+  align-items: start;
+}
+
+.appointment-page__aside {
+  position: sticky;
+  top: 7.5rem;
+  display: flex;
+  min-height: 34rem;
+  flex-direction: column;
+  padding: clamp(1.5rem, 2.7vw, 2.1rem);
+  color: var(--paper);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(215, 123, 164, 0.24), transparent 37%),
+    var(--navy);
+  border-radius: 1.5rem 3.5rem 1.5rem 1.5rem;
+}
+
+.appointment-page__aside-eyebrow {
+  margin-bottom: 0.8rem;
+  color: var(--rose-powder);
+  font-family: var(--font-display);
+  font-size: 0.59rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.appointment-page__aside h2 {
+  max-width: 12ch;
+  color: var(--paper);
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 1.18;
+}
+
+.appointment-page__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 2rem;
+}
+
+.appointment-page__steps li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 0;
+  color: rgba(255, 249, 248, 0.7);
+  border-top: 1px solid rgba(255, 249, 248, 0.13);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.appointment-page__steps li span {
+  width: 1.8rem;
+  flex: 0 0 auto;
+  color: var(--rose-powder);
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.appointment-page__aside-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1.8rem;
+  padding: 0.85rem;
+  color: rgba(255, 249, 248, 0.75);
+  background: rgba(255, 249, 248, 0.07);
+  border-radius: var(--radius-sm);
+  font-size: 0.69rem;
+  line-height: 1.6;
+}
+
+.appointment-page__aside-note svg {
+  flex: 0 0 auto;
+  margin-top: 0.08rem;
+  color: var(--rose-powder);
+}
+
+.appointment-page__aside-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.appointment-page__aside-contact p {
+  margin-bottom: 0.3rem;
+  color: rgba(255, 249, 248, 0.64);
+  font-size: 0.65rem;
+  line-height: 1.5;
+}
+
+.appointment-page__aside-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: color 0.25s ease;
+}
+
+.appointment-page__aside-contact a:hover {
+  color: var(--rose-powder);
+}
+
+.appointment-page__aside-contact svg {
+  color: var(--rose-powder);
+}
+
+.appointment-page__form-wrap {
+  min-width: 0;
+}
+
+.appointment-page__footnote {
+  max-width: 72ch;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.67rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .appointment-page__head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.4rem;
+    align-items: start;
+  }
+
+  .appointment-page__head-aside {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    align-items: center;
+  }
+
+  .appointment-page__head-aside p {
+    max-width: 52ch;
+    margin-top: 0;
+  }
+
+  .appointment-page__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .appointment-page__aside {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .appointment-page {
+    padding-top: 2.4rem;
+  }
+
+  .appointment-page__head h1 {
+    max-width: 100%;
+    font-size: clamp(2.75rem, 13vw, 4rem);
+  }
+
+  .appointment-page__head > div:first-child p:last-child {
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .appointment-page__head-aside {
+    display: block;
+  }
+
+  .appointment-page__head-aside p {
+    margin-top: 0.55rem;
+  }
+}

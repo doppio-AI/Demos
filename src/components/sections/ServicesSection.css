@@ -1,0 +1,140 @@
+.services-home {
+  position: relative;
+  background:
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-bright) 44%, var(--paper) 100%);
+}
+
+.services-home__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.55fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  margin-bottom: clamp(2.4rem, 5vw, 4rem);
+}
+
+.services-home__head .section-title {
+  max-width: 17ch;
+}
+
+.services-home__head-aside p {
+  max-width: 36ch;
+  margin-bottom: 1.25rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.9rem, 1.6vw, 1.35rem);
+}
+
+.service-entry {
+  min-width: 0;
+  height: 100%;
+}
+
+.service-entry--wide {
+  grid-column: span 2;
+}
+
+.service-entry > .service-card {
+  height: 100%;
+}
+
+.services-home__foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.8rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.services-home__foot p {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 57ch;
+  color: var(--muted);
+  font-size: 0.73rem;
+  line-height: 1.6;
+}
+
+.services-home__foot p svg {
+  flex: 0 0 auto;
+  margin-top: 0.14rem;
+  color: var(--rose-deep);
+}
+
+.services-home__foot-link {
+  margin-top: 0;
+}
+
+@media (max-width: 1020px) {
+  .services-home__head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .services-home__head .section-title {
+    max-width: 20ch;
+  }
+
+  .services-home__head-aside {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .services-home__head-aside p {
+    max-width: 50ch;
+    margin-bottom: 0;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-entry--wide {
+    grid-column: span 1;
+  }
+
+  .service-entry:first-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-entry:first-child,
+  .service-entry--wide {
+    grid-column: span 1;
+  }
+
+  .services-home__head-aside {
+    display: block;
+  }
+
+  .services-home__head-aside p {
+    margin-bottom: 1rem;
+  }
+
+  .services-home__foot {
+    align-items: flex-start;
+    margin-top: 1.4rem;
+  }
+
+  .services-home__foot-link {
+    display: none;
+  }
+}

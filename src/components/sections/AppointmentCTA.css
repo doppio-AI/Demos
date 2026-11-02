@@ -1,0 +1,118 @@
+.appointment-cta {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+  color: var(--paper);
+  background:
+    radial-gradient(circle at 90% 18%, rgba(247, 221, 228, 0.16), transparent 24%),
+    linear-gradient(135deg, #a64b73 0%, var(--rose-deep) 52%, #9b3f66 100%);
+}
+
+.appointment-cta__texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+}
+
+.appointment-cta__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.55fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.appointment-cta__copy {
+  position: relative;
+  z-index: 1;
+}
+
+.appointment-cta .eyebrow {
+  color: var(--paper);
+}
+
+.appointment-cta .eyebrow::before {
+  background: var(--paper);
+}
+
+.appointment-cta h2 {
+  max-width: 15ch;
+  color: var(--paper);
+  font-size: clamp(2.55rem, 5vw, 4.7rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.appointment-cta__copy > p:not(.eyebrow, .appointment-cta__note) {
+  max-width: 56ch;
+  margin-top: 1.5rem;
+  color: rgba(255, 249, 248, 0.95);
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height: 1.8;
+}
+
+.appointment-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.appointment-cta__note {
+  max-width: 49ch;
+  margin-top: 1.2rem;
+  color: rgba(255, 249, 248, 0.95);
+  font-size: 0.73rem;
+  line-height: 1.65;
+}
+
+.appointment-cta__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose-pastel);
+}
+
+.appointment-cta__art svg {
+  width: min(100%, 21rem);
+  filter: drop-shadow(0 20px 30px rgba(60, 20, 35, 0.12));
+}
+
+@media (max-width: 900px) {
+  .appointment-cta__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .appointment-cta__art {
+    display: none;
+  }
+
+  .appointment-cta h2 {
+    max-width: 17ch;
+  }
+}
+
+@media (max-width: 600px) {
+  .appointment-cta {
+    padding-block: 3.9rem;
+  }
+
+  .appointment-cta h2 {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 10.5vw, 3.2rem);
+  }
+
+  .appointment-cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .appointment-cta__actions .btn {
+    width: 100%;
+  }
+}
